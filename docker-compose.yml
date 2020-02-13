@@ -12,6 +12,7 @@ services:
       - ./data/certs:/etc/nginx/certs
       - ./data/vhost.d:/etc/nginx/vhost.d
       - ./data/html:/usr/share/nginx/html
+      - ./conf/custom_proxy_settings.conf:/etc/nginx/conf.d/custom_proxy_settings.conf
     restart: always
 
   letsencrypt:
