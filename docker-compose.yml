@@ -14,6 +14,9 @@ services:
       - ./data/vhost.d:/etc/nginx/vhost.d
       - ./data/html:/usr/share/nginx/html
       - ./conf/custom_proxy_settings.conf:/etc/nginx/conf.d/custom_proxy_settings.conf
+    logging:
+      options:
+        max-size: "1m"
     restart: always
 
   letsencrypt:
@@ -26,6 +29,9 @@ services:
       - ./data/certs:/etc/nginx/certs
       - ./data/vhost.d:/etc/nginx/vhost.d
       - ./data/html:/usr/share/nginx/html
+    logging:
+      options:
+        max-size: "1m"
     restart: always
 
 networks:
