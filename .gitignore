@@ -2,4 +2,3 @@ data
 htpasswd
 .env
 _remote
-docker-compose.*.yml

@@ -22,24 +22,6 @@ services:
       - default
       - nginx-proxy2
 
-  letsencrypt:
-    container_name: nginx-proxy-letsencrypt
-    image: jrcs/letsencrypt-nginx-proxy-companion
-    environment:
-      - NGINX_PROXY_CONTAINER=nginx-proxy
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock:ro
-      - ./data/certs:/etc/nginx/certs
-      - ./data/vhost.d:/etc/nginx/vhost.d
-      - ./data/html:/usr/share/nginx/html
-    logging:
-      options:
-        max-size: "1m"
-    restart: always
-    networks:
-      - default
-      - nginx-proxy2
-
 networks:
   default:
     external:
