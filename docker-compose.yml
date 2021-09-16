@@ -18,6 +18,9 @@ services:
       options:
         max-size: "1m"
     restart: always
+    networks:
+      - default
+      - nginx-proxy2
 
   letsencrypt:
     container_name: nginx-proxy-letsencrypt
@@ -33,8 +36,14 @@ services:
       options:
         max-size: "1m"
     restart: always
+    networks:
+      - default
+      - nginx-proxy2
 
 networks:
   default:
     external:
       name: nginx-proxy
+  nginx-proxy2: 
+    external: 
+      name: nginx-proxy2
