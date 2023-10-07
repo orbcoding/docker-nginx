@@ -24,8 +24,8 @@ services:
 
 networks:
   default:
-    external:
-      name: nginx-proxy
+    name: nginx-proxy
+    external: true
   nginx-proxy2: 
-    external: 
-      name: nginx-proxy2
+    name: nginx-proxy2
+    external: true
