@@ -29,3 +29,6 @@ networks:
   nginx-proxy2: 
     name: nginx-proxy2
     external: true
+  nginx-proxy3:
+    name: nginx-proxy3
+    external: true
